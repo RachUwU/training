@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">training</string>
+    <string name="enter_workout_name">Enter workout name</string>
+    <string name="default_workout_name">My workout</string>
+    <string name="plus_btn">plus_btn</string>
+    <string name="today">Today</string>
+    <string name="workout_position">00</string>
+    <string name="default_time">00:00</string>
+    <string name="change_btn">change_btn</string>
+    <string name="add_exercise_btn">add_exercise_btn</string>
+    <string name="spinner_of_exercise_type">types of exercise</string>
+    <string name="spDialog">Exercises:</string>
+    <string name="default_exercise_name">exercisetype</string>
+    <string name="increase_weight">increase_weight</string>
+    <string name="decrease_rep">decrease_rep</string>
+    <string name="increase_rep">increase_rep</string>
+    <string name="decrease_weight">decrease_weight</string>
+    <string name="default_weight" />
+    <string name="default_increment" />
+    <string name="default_reps" />
+    <string name="_0">0</string>
+    <string name="increment">1.25</string>
+    <string name="set_position">00</string>
+    <string name="default_set_name">Weight: 80 kg for 10 rep(s)</string>
+    <string name="weight_reset_btn">weight_reset_btn</string>
+    <string name="_1_25">1.25</string>
+    <string name="_10">10</string>
+    <string name="_5">5</string>
+    <string name="_15">15</string>
+    <string name="_2_5">2.5</string>
+    <string name="_20">20</string>
+    <string name="delete_btn">delete_btn</string>
+</resources>

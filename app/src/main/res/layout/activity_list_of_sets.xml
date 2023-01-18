@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListOfSets">
+
+    <ImageButton
+        android:id="@+id/imgBtnWeightReset2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="2dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/weight_reset_btn"
+        android:onClick="reset_reps"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnIncreaseReps"
+        app:layout_constraintTop_toTopOf="@+id/imgBtnIncreaseReps"
+        app:srcCompat="@drawable/reset"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tView_exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/default_exercise_name"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatActBtn_add_set"
+        android:contentDescription="@string/plus_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:focusable="true"
+        android:onClick="add"/>
+
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="0"
+        android:autofillHints="0"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:inputType="numberDecimal|numberSigned"
+        android:text="@string/default_weight"
+        app:layout_constraintBottom_toTopOf="@+id/floatActBtn_add_set"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextIncrement"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="2dp"
+        android:layout_weight="0"
+        android:autofillHints="1.25"
+        android:ems="10"
+        android:hint="@string/increment"
+        android:inputType="numberDecimal|numberSigned"
+        android:text="@string/default_increment"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnWeightReset"
+        app:layout_constraintTop_toTopOf="@+id/editTextWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/imgBtnIncreaseWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="-10dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/increase_weight"
+        android:minWidth="30dp"
+        android:minHeight="30dp"
+        android:onClick="increase_weight"
+        app:layout_constraintStart_toEndOf="@+id/editTextIncrement"
+        app:layout_constraintTop_toTopOf="@+id/editTextIncrement"
+        app:srcCompat="@drawable/plus_svgrepo_com"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/imgBtnDecreaseWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/decrease_weight"
+        android:onClick="decrease_weight"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtnIncreaseWeight"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnIncreaseWeight"
+        app:srcCompat="@drawable/minus_svgrepo_com"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/imgBtnIncreaseReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/increase_rep"
+        android:onClick="increase_reps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextRepAmount"
+        app:srcCompat="@drawable/plus_svgrepo_com"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/imgBtnDecreaseReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/decrease_rep"
+        android:onClick="decrease_reps"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtnIncreaseReps"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnIncreaseReps"
+        app:srcCompat="@drawable/minus_svgrepo_com"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextRepAmount"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="2dp"
+        android:layout_weight="0"
+        android:autofillHints="0"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:inputType="numberDecimal"
+        android:text="@string/default_reps"
+        app:layout_constraintEnd_toStartOf="@+id/imgBtnWeightReset2"
+        app:layout_constraintTop_toTopOf="@+id/editTextWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_sets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tView_exercise_name" />
+
+    <ImageButton
+        android:id="@+id/imgBtnWeightReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/weight_reset_btn"
+        android:onClick="reset_weight"
+        app:layout_constraintStart_toEndOf="@+id/editTextWeight"
+        app:layout_constraintTop_toTopOf="@+id/editTextWeight"
+        app:srcCompat="@drawable/reset"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonChangeWeight1"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="4dp"
+        android:onClick="set_1_25"
+        android:text="@string/_1_25"
+        android:textAlignment="textStart"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnDecreaseWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonChangeWeight3"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:onClick="set_5"
+        android:text="@string/_5"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeWeight2"
+        app:layout_constraintTop_toTopOf="@+id/buttonChangeWeight2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonChangeWeight4"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dp"
+        android:onClick="set_10"
+        android:text="@string/_10"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonChangeWeight1"
+        app:layout_constraintTop_toBottomOf="@+id/buttonChangeWeight1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonChangeWeight5"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:onClick="set_15"
+        android:text="@string/_15"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeWeight4"
+        app:layout_constraintTop_toTopOf="@+id/buttonChangeWeight4"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonChangeWeight2"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:onClick="set_2_5"
+        android:text="@string/_2_5"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeWeight1"
+        app:layout_constraintTop_toTopOf="@+id/buttonChangeWeight1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/buttonChangeWeight6"
+        android:layout_width="65dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:onClick="set_20"
+        android:text="@string/_20"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonChangeWeight5"
+        app:layout_constraintTop_toTopOf="@+id/buttonChangeWeight5"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
